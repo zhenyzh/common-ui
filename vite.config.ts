@@ -1,32 +1,37 @@
-import { defineConfig } from "vite";
+import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import path from 'path'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    dts({
-      insertTypesEntry: true,
-      exclude: ["src/env.ts", "src/**/*.stories.ts"],
-    }),
-    cssInjectedByJsPlugin(),
-  ],
+    plugins: [
+        react(),
+        dts({
+            insertTypesEntry: true,
+            exclude: ["src/env.ts", "src/**/*.stories.ts"],
+        }),
+        cssInjectedByJsPlugin(),
+    ],
 
-  build: {
-    lib: {
-      entry: "src/index.ts",
-      name: "common-ui",
-      fileName: (format) => `index.${format}.js`,
-      formats: ["es", "cjs", "umd"],
-    },
-    rollupOptions: {
-      external: ["react"],
-      output: {
-        globals: {
-          react: "React",
+    build: {
+        lib: {
+            entry: {
+                components: path.resolve(__dirname, "src/components/index.ts"),
+                icons: path.resolve(__dirname, 'src/assets/icons/index.ts'),
+            },
+            name: "common-ui",
+            formats: ["es", "cjs"],
+            fileName: (format, entryName) =>
+                `${entryName}.${format === "es" ? "es" : "cjs"}.js`
         },
-      },
+        rollupOptions: {
+            external: ["react"],
+            output: {
+                globals: {
+                    react: "React",
+                },
+            },
+        },
     },
-  },
 });
