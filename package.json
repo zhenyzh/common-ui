@@ -1,7 +1,7 @@
 {
   "name": "@zhenyzh/common-ui",
   "private": false,
-  "version": "2.2.9",
+  "version": "2.2.8",
   "files": [
     "dist"
   ],
@@ -18,7 +18,8 @@
       "import": "./dist/icons.es.js",
       "require": "./dist/icons.cjs.js",
       "types": "./dist/icons.d.ts"
-    }
+    },
+    "./style/common/ui": "./dist/common-ui.css"
   },
   "scripts": {
     "build": "vite build",
