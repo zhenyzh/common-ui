@@ -18,7 +18,7 @@ export default defineConfig({
         lib: {
             entry: path.resolve(__dirname, 'src/index.ts'),
             name: "common-ui",
-            formats: ['es', 'cjs'],
+            formats: ['es', 'cjs', 'umd'],
             fileName: format => `index.${format}.js`,
         },
         rollupOptions: {
