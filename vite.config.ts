@@ -16,10 +16,15 @@ export default defineConfig({
 
     build: {
         lib: {
-            entry: path.resolve(__dirname, 'src/index.ts'),
+            entry: {
+                index: path.resolve(__dirname, 'src/index.ts'),
+                components: path.resolve(__dirname, 'src/components/index.ts'),
+                icons: path.resolve(__dirname, 'src/icons/index.ts'),
+            },
             name: "common-ui",
-            formats: ['es', 'cjs', 'umd'],
-            fileName: format => `index.${format}.js`,
+            formats: ['es', 'cjs'],
+            fileName: (format, entryName) =>
+                `${entryName}.${format === "es" ? "es" : "cjs"}.js`
         },
         rollupOptions: {
             external: ["react"],

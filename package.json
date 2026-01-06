@@ -18,14 +18,14 @@
       "types": "./dist/index.d.ts"
     },
     "./components": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/components.es.js",
+      "require": "./dist/components.cjs.js",
+      "types": "./dist/components.d.ts"
     },
     "./icons": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/icons.es.js",
+      "require": "./dist/icons.cjs.js",
+      "types": "./dist/icons.d.ts"
     }
   },
   "scripts": {
