@@ -18,8 +18,7 @@
       "import": "./dist/icons.es.js",
       "require": "./dist/icons.cjs.js",
       "types": "./dist/icons.d.ts"
-    },
-    "./styles/common-ui": "./dist/common-ui.css"
+    }
   },
   "scripts": {
     "build": "vite build",
