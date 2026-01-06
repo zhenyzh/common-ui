@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import type { ComponentProps, ReactNode } from "react";
 
-import { SearchIcon } from "../../assets/icons";
+import { SearchIcon } from "../../icons";
 
 import s from "./search-field.module.css";
 

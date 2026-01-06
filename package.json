@@ -2,6 +2,9 @@
   "name": "@zhenyzh/common-ui",
   "private": false,
   "version": "2.2.1",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "files": [
     "dist"
   ],

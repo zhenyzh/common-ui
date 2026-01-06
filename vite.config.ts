@@ -18,7 +18,7 @@ export default defineConfig({
         lib: {
             entry: {
                 components: path.resolve(__dirname, "src/components/index.ts"),
-                icons: path.resolve(__dirname, 'src/assets/icons/index.ts'),
+                icons: path.resolve(__dirname, 'src/icons/index.ts'),
             },
             name: "common-ui",
             formats: ["es", "cjs"],
