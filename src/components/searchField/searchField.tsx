@@ -3,7 +3,7 @@ import type { ComponentProps, ReactNode } from "react";
 
 import { SearchIcon } from "../../icons";
 
-import s from "./search-field.module.css";
+import s from "./searchField.module.css";
 
 export type SearchFieldProps = {
   label?: ReactNode;
