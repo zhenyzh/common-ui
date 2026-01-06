@@ -19,7 +19,7 @@
       "require": "./dist/icons.cjs.js",
       "types": "./dist/icons.d.ts"
     },
-    "./style": "./dist/common-ui.css"
+    "./styles/common-ui": "./dist/common-ui.css"
   },
   "scripts": {
     "build": "vite build",
