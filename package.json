@@ -12,6 +12,11 @@
     "registry": "https://npm.pkg.github.com"
   },
   "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
     "./components": {
       "import": "./dist/components.es.js",
       "require": "./dist/components.cjs.js",
