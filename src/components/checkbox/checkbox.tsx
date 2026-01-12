@@ -17,7 +17,7 @@ export const CheckBox = ({
     <label className={clsx(s.check, s.option, className)}>
       <input type="checkbox" className={s.checkInput} {...props} />
       <span className={s.checkBox}></span>
-      <span className={s.labelClassName}>{label}</span>
+      <span className={labelClassName}>{label}</span>
     </label>
   );
 };
