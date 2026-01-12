@@ -18,9 +18,9 @@
 .checkBox {
     position: absolute;
     margin-top: 0.1em;
-    margin-left: -1em;
-    width: 0.8em;
-    height: 0.8em;
+    margin-left: -1.25em;
+    width: 1em;
+    height: 1em;
     overflow: hidden;
     border-radius: 0.05em;
     background-color: white;
