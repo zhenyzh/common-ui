@@ -5,6 +5,7 @@
 
 .check {
     display: flex;
+    padding-left: 1.2em;
     align-items: center;
     position: relative;
 }
