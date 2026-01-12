@@ -4,7 +4,9 @@
 }
 
 .check {
-    padding-left: 1.2em;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .checkInput {
