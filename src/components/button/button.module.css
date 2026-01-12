@@ -43,6 +43,7 @@
 .outline {
     background-color: transparent;
     border: none;
+    color: var(--color-accent);;
 }
 
 .fullWidth {
