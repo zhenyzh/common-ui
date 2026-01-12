@@ -4,13 +4,19 @@ import s from "./checkbox.module.css";
 
 export type CheckboxProps = {
   label?: string;
+  labelClassName?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const CheckBox = ({ label, className, ...props }: CheckboxProps) => {
+export const CheckBox = ({
+  label,
+  className,
+  labelClassName,
+  ...props
+}: CheckboxProps) => {
   return (
     <label className={clsx(s.check, s.option, className)}>
       <input type="checkbox" className={s.checkInput} {...props} />
-      <span className={s.checkBox}></span>
+      <span className={clsx(s.checkBox, labelClassName)}></span>
       {label}
     </label>
   );
