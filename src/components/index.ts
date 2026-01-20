@@ -5,3 +5,4 @@ export * from "./typography";
 export * from "./container";
 export * from "./line";
 export * from "./checkbox";
+export * from "./box";
