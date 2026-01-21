@@ -6,3 +6,4 @@ export * from "./container";
 export * from "./line";
 export * from "./checkbox";
 export * from "./box";
+export * from './textField'
