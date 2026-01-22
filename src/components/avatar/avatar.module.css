@@ -23,6 +23,10 @@
     object-fit: contain;
 }
 
+.image.logo {
+    overflow: visible;
+}
+
 .card:hover .image {
     transform: scale(1.02);
     opacity: 0.92;
