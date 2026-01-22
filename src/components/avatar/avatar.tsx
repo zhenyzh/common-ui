@@ -1,7 +1,7 @@
 import s from "./avatar.module.css";
 import clsx from "clsx";
 
-export type AvatarVariant = "user" | "logo";
+export type AvatarVariant = "cropped" | "whole";
 
 export type AvatarProps = {
   image: string | React.ReactNode;
@@ -13,7 +13,7 @@ export type AvatarProps = {
 export const Avatar = ({
   image,
   size = 50,
-  variant = "user",
+  variant = "cropped",
   className,
 }: AvatarProps) => {
   return (
