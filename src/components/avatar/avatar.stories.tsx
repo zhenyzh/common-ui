@@ -16,10 +16,3 @@ export const Default: Story = {
     image: "https://unsplash.it/182/182",
   },
 };
-
-export const WithLongTextContent: Story = {
-  args: {
-    image: "https://unsplash.it/183/183",
-    name: "Drake & The Weeknd & Kanye West",
-  },
-};
