@@ -5,7 +5,7 @@ export type AvatarVariant = "user" | "logo";
 
 export type AvatarProps = {
   image: string | React.ReactNode;
-  size?: string;
+  size?: number;
   variant?: AvatarVariant;
   className?: string;
 };
