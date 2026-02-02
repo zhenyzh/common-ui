@@ -1,49 +1,49 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-
-import { TextField } from './textField'
-import {SearchIcon} from "../../icons";
+import { TextField } from "./textField";
+import { SearchIcon } from "../../icons";
 
 const meta = {
-  title: 'Components/TextField',
+  title: "Components/TextField",
   component: TextField,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
   args: {},
-} satisfies Meta<typeof TextField>
+} satisfies Meta<typeof TextField>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: 'Some label',
-    placeholder: 'Some placeholder',
+    label: "Some label",
+    placeholder: "Some placeholder",
   },
-}
+};
 
 export const Disabled: Story = {
   args: {
-    label: 'Some label',
-    placeholder: 'Some placeholder',
+    label: "Some label",
+    placeholder: "Some placeholder",
     disabled: true,
   },
-}
+};
 
 export const Error: Story = {
   args: {
-    label: 'Some label',
-    placeholder: 'Some placeholder',
-    errorMessage: 'Some error message',
+    label: "Some label",
+    placeholder: "Some placeholder",
+    errorMessage: "Some error message",
   },
-}
+};
 
 export const Search: Story = {
   args: {
-    label: 'Some label',
-    placeholder: 'Some placeholder',
+    label: "Some label",
+    placeholder: "Some placeholder",
     icon: <SearchIcon width={20} height={20} />,
-    inputSize: 'l',
+    inputSize: "l",
+    iconEnd: <SearchIcon width={20} height={20} />,
   },
-}
+};

@@ -1,31 +1,33 @@
-import { clsx } from 'clsx'
-import type { ComponentProps, ReactNode } from 'react'
+import { clsx } from "clsx";
+import type { ComponentProps, ReactNode } from "react";
 
-import { useGetId } from './useGetId'
+import { useGetId } from "./useGetId";
 
-import s from './textField.module.css'
-import {Typography} from "../typography";
+import s from "./textField.module.css";
+import { Typography } from "../typography";
 
-export type TextFieldSize = 'm' | 'l'
+export type TextFieldSize = "m" | "l";
 
 export type TextFieldProps = {
-  errorMessage?: string
-  label?: ReactNode
-  icon?: ReactNode
-  inputSize?: TextFieldSize
-} & ComponentProps<'input'>
+  errorMessage?: string;
+  label?: ReactNode;
+  icon?: ReactNode;
+  iconEnd?: ReactNode;
+  inputSize?: TextFieldSize;
+} & ComponentProps<"input">;
 
 export const TextField = ({
   className,
   errorMessage,
   id,
   icon,
+  iconEnd,
   label,
-  inputSize = 'm',
+  inputSize = "m",
   ...props
 }: TextFieldProps) => {
-  const showError = Boolean(errorMessage)
-  const inputId = useGetId(id)
+  const showError = Boolean(errorMessage);
+  const inputId = useGetId(id);
 
   return (
     <div className={clsx(s.box, className)}>
@@ -42,15 +44,17 @@ export const TextField = ({
             s.input,
             showError && s.error,
             icon && s.withIcon,
-            inputSize === 'l' && s.large
+            iconEnd && s.withIconEnd,
+            inputSize === "l" && s.large,
           )}
           id={inputId}
-          type={'text'}
+          type={"text"}
           {...props}
         />
+        {iconEnd && <span className={s.iconEnd}>{iconEnd}</span>}
       </div>
 
       {showError && <Typography variant="error">{errorMessage}</Typography>}
     </div>
-  )
-}
+  );
+};
