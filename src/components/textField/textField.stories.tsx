@@ -42,7 +42,7 @@ export const Search: Story = {
   args: {
     label: "Some label",
     placeholder: "Some placeholder",
-    icon: <SearchIcon width={20} height={20} />,
+    iconStart: <SearchIcon width={20} height={20} />,
     inputSize: "l",
     iconEnd: <SearchIcon width={20} height={20} />,
   },

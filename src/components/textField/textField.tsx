@@ -11,7 +11,7 @@ export type TextFieldSize = "m" | "l";
 export type TextFieldProps = {
   errorMessage?: string;
   label?: ReactNode;
-  icon?: ReactNode;
+  iconStart?: ReactNode;
   iconEnd?: ReactNode;
   inputSize?: TextFieldSize;
 } & ComponentProps<"input">;
@@ -20,7 +20,7 @@ export const TextField = ({
   className,
   errorMessage,
   id,
-  icon,
+  iconStart,
   iconEnd,
   label,
   inputSize = "m",
@@ -38,12 +38,12 @@ export const TextField = ({
       )}
 
       <div className={s.inputWrapper}>
-        {icon && <span className={s.icon}>{icon}</span>}
+        {iconStart && <span className={s.iconStart}>{iconStart}</span>}
         <input
           className={clsx(
             s.input,
             showError && s.error,
-            icon && s.withIcon,
+            iconStart && s.withIconStart,
             iconEnd && s.withIconEnd,
             inputSize === "l" && s.large,
           )}
