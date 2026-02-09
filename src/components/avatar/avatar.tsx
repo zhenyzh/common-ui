@@ -21,7 +21,7 @@ export const Avatar = ({
 }: AvatarProps) => {
   const renderImage = () => {
     if (React.isValidElement(image)) return image;
-    if (typeof image === "string" && image.trim() !== "")
+    if (typeof image === "string" && !!image.trim())
       return <img src={image} alt="" aria-hidden />;
 
     return <img src={defaultAvatar} alt="" aria-hidden />;
