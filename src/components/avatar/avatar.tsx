@@ -25,7 +25,7 @@ export const Avatar = ({
     >
       <div className={clsx(s.image, s[variant])}>
         {typeof image === "string" ? (
-          <img src={image || DefaultAvatarIcon} alt="" aria-hidden />
+          <img src={DefaultAvatarIcon} alt="" aria-hidden />
         ) : (
           image
         )}
