@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Avatar } from "./avatar";
+import DefaultAvatarIcon from "../../icons/img/default-avatar.png";
 
 const meta: Meta<typeof Avatar> = {
   title: "entities/Avatar",
@@ -13,6 +14,6 @@ type Story = StoryObj<typeof Avatar>;
 
 export const Default: Story = {
   args: {
-    image: "https://unsplash.it/182/182",
+    image: DefaultAvatarIcon,
   },
 };

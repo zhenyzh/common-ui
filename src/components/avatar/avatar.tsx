@@ -1,5 +1,7 @@
-import s from "./avatar.module.css";
 import clsx from "clsx";
+
+import DefaultAvatarIcon from "../../icons/img/default-avatar.png";
+import s from "./avatar.module.css";
 
 export type AvatarVariant = "cropped" | "whole";
 
@@ -23,7 +25,7 @@ export const Avatar = ({
     >
       <div className={clsx(s.image, s[variant])}>
         {typeof image === "string" ? (
-          <img src={image} alt="" aria-hidden />
+          <img src={image || DefaultAvatarIcon} alt="" aria-hidden />
         ) : (
           image
         )}
