@@ -1,6 +1,7 @@
+import React from "react";
 import clsx from "clsx";
 
-import DefaultAvatarIcon from "../../icons/img/default-avatar.jpg";
+import defaultAvatar from "../../icons/default-avatar.png";
 import s from "./avatar.module.css";
 
 export type AvatarVariant = "cropped" | "whole";
@@ -18,18 +19,20 @@ export const Avatar = ({
   variant = "cropped",
   className,
 }: AvatarProps) => {
+  const renderImage = () => {
+    if (React.isValidElement(image)) return image;
+    if (typeof image === "string" && image.trim() !== "")
+      return <img src={image} alt="" aria-hidden />;
+
+    return <img src={defaultAvatar} alt="" aria-hidden />;
+  };
+
   return (
     <div
       className={clsx(s.card, className)}
       style={{ width: size, height: size }}
     >
-      <div className={clsx(s.image, s[variant])}>
-        {typeof image === "string" ? (
-          <img src={image ?? DefaultAvatarIcon} alt="" aria-hidden />
-        ) : (
-          image
-        )}
-      </div>
+      <div className={clsx(s.image, s[variant])}>{renderImage()}</div>
     </div>
   );
 };
