@@ -1,10 +1,15 @@
-import type {ComponentProps, ElementType} from "react";
+import React, { type ComponentProps, type ElementType } from "react";
 
 export type BoxProps<T extends ElementType = "div"> = {
-    as?: T;
+  as?: T;
 } & ComponentProps<T>;
 
-export const Box = <T extends ElementType = "div">({as = "div", ...props}: BoxProps<T>) => {
+export const Box = React.forwardRef(
+  <T extends ElementType = "div">(
+    { as = "div", ...props }: BoxProps<T>,
+    ref: React.Ref<T>,
+  ) => {
     const Component = as;
-    return <Component {...props} />;
-};
+    return <Component ref={ref} {...props} />;
+  },
+);
