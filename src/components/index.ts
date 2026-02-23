@@ -9,3 +9,4 @@ export * from "./box";
 export * from "./textField";
 export * from "./avatar";
 export * from "./dropdownMenu";
+export * from "./textareaAutosizeField";

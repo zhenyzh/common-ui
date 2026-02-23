@@ -4,19 +4,65 @@
     width: 100%;
 }
 
-.inputWrapper {
+.textareaWrapper {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
-.iconStart, .iconEnd {
+.textarea {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid var(--color-border-input-primary);
+    border-radius: 4px;
+    font-size: var(--font-size-m);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+
+    outline: none;
+    transition: 200ms background-color, 200ms color, 200ms border-color;
+}
+
+.textarea.stretching {
+    resize: none;
+    overflow: hidden;
+}
+
+.textarea:disabled {
+    color: var(--color-disabled);
+}
+
+.textarea:focus,
+.textarea:active:enabled {
+    border-color: var(--color-border-input-active);
+}
+
+.textarea:hover:not(:disabled) {
+    background-color: var(--color-bg-input-hover);
+}
+
+.textarea::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.textarea.error {
+    border-color: var(--color-text-error);
+}
+
+.textarea.withIconStart {
+    padding-left: 40px;
+}
+
+.textarea.withIconEnd {
+    padding-right: 40px;
+}
+
+.iconStart,
+.iconEnd {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-
+    bottom: 8px;
     display: flex;
-
     color: var(--color-text-secondary);
 }
 
@@ -26,55 +72,4 @@
 
 .iconEnd {
     right: 12px;
-}
-
-.input {
-    width: 100%;
-    height: 40px;
-    padding: 8px 12px;
-    border: 1px solid var(--color-border-input-primary);
-    border-radius: 4px;
-
-    font-size: var(--font-size-m);
-    color: var(--color-text-primary);
-
-    background-color: var(--color-bg-primary);
-    outline: none;
-
-    transition: 200ms background-color,
-    200ms color,
-    200ms border-color;
-}
-
-.input.large {
-    height: 56px;
-}
-
-.input:disabled {
-    color: var(--color-disabled);
-}
-
-.input:focus,
-.input:active:enabled {
-    border-color: var(--color-border-input-active);
-}
-
-.input:hover:not(:disabled) {
-    background-color: var(--color-bg-input-hover);
-}
-
-.input::placeholder {
-    color: var(--color-text-secondary);
-}
-
-.input.error {
-    border-color: var(--color-text-error);
-}
-
-.input.withIconStart {
-    padding-left: 40px;
-}
-
-.input.withIconEnd {
-    padding-right: 40px;
 }
