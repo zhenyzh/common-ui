@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { forwardRef, ReactNode } from "react";
 import { clsx } from "clsx";
 import TextareaAutosize, {
   TextareaAutosizeProps,
@@ -19,48 +19,57 @@ type TextareaFieldProps = {
   stretching?: boolean;
 } & TextareaAutosizeProps;
 
-export const TextareaAutosizeField = ({
-  className,
-  errorMessage,
-  label,
-  iconStart,
-  iconEnd,
-  minRows = 1,
-  maxRows = 6,
-  stretching = false,
-  ...props
-}: TextareaFieldProps) => {
-  const textareaId = useGetId();
-  const showError = Boolean(errorMessage);
+export const TextareaAutosizeField = forwardRef<
+  HTMLTextAreaElement,
+  TextareaFieldProps
+>(
+  (
+    {
+      className,
+      errorMessage,
+      label,
+      iconStart,
+      iconEnd,
+      minRows,
+      maxRows,
+      stretching,
+      ...props
+    },
+    ref,
+  ) => {
+    const textareaId = useGetId();
+    const showError = Boolean(errorMessage);
 
-  return (
-    <div className={clsx(s.box, className)}>
-      {label && (
-        <Typography variant="label" as="label" htmlFor={textareaId}>
-          {label}
-        </Typography>
-      )}
+    return (
+      <div className={clsx(s.box, className)}>
+        {label && (
+          <Typography variant="label" as="label" htmlFor={textareaId}>
+            {label}
+          </Typography>
+        )}
 
-      <div className={s.textareaWrapper}>
-        {iconStart && <span className={s.iconStart}>{iconStart}</span>}
+        <div className={s.textareaWrapper}>
+          {iconStart && <span className={s.iconStart}>{iconStart}</span>}
 
-        <TextareaAutosize
-          className={clsx(
-            s.textarea,
-            showError && s.error,
-            iconStart && s.withIconStart,
-            iconEnd && s.withIconEnd,
-            !stretching && s.stretching,
-          )}
-          id={textareaId}
-          minRows={minRows}
-          maxRows={maxRows}
-          {...props}
-        />
+          <TextareaAutosize
+            ref={ref}
+            className={clsx(
+              s.textarea,
+              showError && s.error,
+              iconStart && s.withIconStart,
+              iconEnd && s.withIconEnd,
+              !stretching && s.stretching,
+            )}
+            id={textareaId}
+            minRows={minRows}
+            maxRows={maxRows}
+            {...props}
+          />
 
-        {iconEnd && <span className={s.iconEnd}>{iconEnd}</span>}
+          {iconEnd && <span className={s.iconEnd}>{iconEnd}</span>}
+        </div>
+        {showError && <Typography variant="error">{errorMessage}</Typography>}
       </div>
-      {showError && <Typography variant="error">{errorMessage}</Typography>}
-    </div>
-  );
-};
+    );
+  },
+);
