@@ -30,8 +30,8 @@ export const TextareaAutosizeField = forwardRef<
       label,
       iconStart,
       iconEnd,
-      minRows,
-      maxRows,
+      minRows = 1,
+      maxRows = 6,
       stretching,
       ...props
     },
