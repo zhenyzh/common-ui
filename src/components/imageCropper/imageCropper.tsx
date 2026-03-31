@@ -192,14 +192,14 @@ export const ImageCropper = ({
           onClick={handleCancel}
           disabled={isProcessing}
         >
-          Cancel
+          Отменить
         </Button>
         <Button
           variant="primary"
           onClick={handleCropConfirm}
           disabled={!croppedAreaPixels || isProcessing}
         >
-          {isProcessing ? "Processing..." : "Apply Crop"}
+          {isProcessing ? "Загрузка..." : "Применить"}
         </Button>
       </DialogFooter>
     </Dialog>
