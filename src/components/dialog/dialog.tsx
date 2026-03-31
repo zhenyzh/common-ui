@@ -2,7 +2,7 @@ import { clsx } from "clsx";
 import { createContext, type ReactNode, use, useEffect } from "react";
 import { createPortal } from "react-dom";
 
-import { IconButton } from "../IconButton";
+import { IconButton } from "../iconButton";
 import s from "./dialog.module.css";
 
 type DialogContextType = {
