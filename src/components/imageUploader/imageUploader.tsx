@@ -19,6 +19,7 @@ export type ImageUploaderProps = {
   cropTitle?: string;
   cropDescription?: string;
   initialImageUrl?: string;
+  onRemoveFile?: (file: File | null) => void;
 };
 
 const MAX_SIZE_IN_MB = 5;
@@ -31,6 +32,7 @@ export const ImageUploader = ({
   cropShape = "rect",
   enableCrop = true,
   initialImageUrl,
+  onRemoveFile,
 }: ImageUploaderProps) => {
   const [isDragOver, setIsDragOver] = useState(false);
   const [preview, setPreview] = useState<string | null>(
@@ -134,6 +136,7 @@ export const ImageUploader = ({
     setPreview(null);
     setOriginalFile(null);
     setError(null);
+    onRemoveFile?.(null);
     // Clear input value to allow selecting the same file again
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
