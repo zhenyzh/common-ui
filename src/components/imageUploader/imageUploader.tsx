@@ -11,7 +11,7 @@ import s from "./imageUploader.module.css";
 export type ImageUploaderProps = {
   onImageSelect: (file: File) => void;
   className?: string;
-  classCropper?: string;
+  classNameCropper?: string;
   acceptedFormats?: string[];
   placeholder?: string;
   cropShape?: CropShape;
@@ -28,7 +28,7 @@ const ACCEPTED_FORMATS = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
 
 export const ImageUploader = ({
   className,
-  classCropper,
+  classNameCropper,
   onImageSelect,
   placeholder = "Upload Cover Image",
   cropShape = "rect",
@@ -202,7 +202,7 @@ export const ImageUploader = ({
       {/* Use the standalone imageCropper component */}
       {enableCrop && preview && originalFile && (
         <ImageCropper
-          className={classCropper}
+          className={classNameCropper}
           isOpen={showCropModal}
           onClose={handleCropCancel}
           onCropComplete={handleCropComplete}
