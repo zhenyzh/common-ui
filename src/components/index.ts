@@ -7,6 +7,7 @@ export * from "./line";
 export * from "./checkbox";
 export * from "./box";
 export * from "./textField";
+export * from "./searchField";
 export * from "./avatar";
 export * from "./dropdownMenu";
 export * from "./textareaAutosizeField";
