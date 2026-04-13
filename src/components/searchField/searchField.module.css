@@ -5,7 +5,6 @@
 }
 
 .searchIcon, .searchEndIcon {
-    pointer-events: none;
     position: absolute;
     z-index: 1;
 
@@ -15,10 +14,12 @@
 
 .searchIcon {
     left: 12px;
+    pointer-events: none;
 }
 
 .searchEndIcon {
     right: 12px;
+    pointer-events: auto;
 }
 
 
