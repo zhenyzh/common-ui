@@ -8,10 +8,12 @@ import s from "./searchField.module.css";
 export type SearchFieldProps = {
   label?: ReactNode;
   placeholder?: string;
+  classNameInput?: string;
 } & ComponentProps<"input">;
 
 export const SearchField = ({
   className,
+  classNameInput,
   placeholder = "Search...",
   ...props
 }: SearchFieldProps) => {
@@ -19,7 +21,7 @@ export const SearchField = ({
     <div className={clsx(s.inputWrapper, className)}>
       <SearchIcon className={s.searchIcon} />
       <input
-        className={clsx(s.input)}
+        className={clsx(s.input, classNameInput)}
         type="text"
         placeholder={placeholder}
         {...props}
