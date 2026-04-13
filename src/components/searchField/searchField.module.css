@@ -1,41 +1,46 @@
 .inputWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon, .searchEndIcon {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+
+    color: var(--color-text-secondary);
+    transition: color 200ms ease;
 }
 
 .searchIcon {
-  pointer-events: none;
-
-  position: absolute;
-  z-index: 1;
-  left: 12px;
-
-  color: var(--color-text-secondary);
-
-  transition: color 200ms ease;
+    left: 12px;
 }
 
+.searchEndIcon {
+    right: 12px;
+}
+
+
 .input {
-  width: 100%;
-  height: 52px;
-  padding: 15px 16px 15px 62px;
-  border: 1px solid var(--color-border-input-primary);
-  border-radius: 26px;
+    width: 100%;
+    height: 52px;
+    padding: 15px 50px 15px 50px;
+    border: 1px solid var(--color-border-input-primary);
+    border-radius: 26px;
 
-  font-size: var(--font-size-m);
-  color: var(--color-text-primary-reverse);
+    font-size: var(--font-size-m);
+    color: var(--color-text-primary-reverse);
 
-  background-color: var(--color-bg-primary-reverse);
-  outline: none;
+    background-color: var(--color-bg-primary-reverse);
+    outline: none;
 
-  transition:
-    200ms background-color,
+    transition: 200ms background-color,
     200ms color,
     200ms border-color;
 }
 
 .input::placeholder {
-  font-size: var(--font-size-m);
-  color: var(--color-text-secondary);
+    font-size: var(--font-size-m);
+    color: var(--color-text-secondary);
 }

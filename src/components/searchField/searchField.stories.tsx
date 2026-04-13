@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { SearchField } from './searchField'
+import { SearchField } from "./searchField";
 
 const meta = {
-  title: 'Components/SearchField',
+  title: "Components/SearchField",
   component: SearchField,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
   args: {},
-} satisfies Meta<typeof SearchField>
+} satisfies Meta<typeof SearchField>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
   args: {
-    placeholder: 'Search for playlists...',
+    placeholder: "Search for playlists...",
   },
-}
+};

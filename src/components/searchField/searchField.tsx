@@ -9,12 +9,14 @@ export type SearchFieldProps = {
   label?: ReactNode;
   placeholder?: string;
   classNameInput?: string;
+  endIcon?: ReactNode;
 } & ComponentProps<"input">;
 
 export const SearchField = ({
   className,
   classNameInput,
   placeholder = "Search...",
+  endIcon,
   ...props
 }: SearchFieldProps) => {
   return (
@@ -26,6 +28,7 @@ export const SearchField = ({
         placeholder={placeholder}
         {...props}
       />
+      <div className={s.searchEndIcon}>{endIcon}</div>
     </div>
   );
 };
