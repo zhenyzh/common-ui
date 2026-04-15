@@ -21,6 +21,7 @@
 
 .whole img {
     object-fit: contain;
+    border-radius: 0;
 }
 
 .image.whole {
