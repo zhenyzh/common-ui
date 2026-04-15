@@ -20,14 +20,10 @@
 }
 
 .whole img {
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 0;
 }
 
-.image.whole {
-    overflow: visible;
-    border-radius: 0;
-}
 
 .card:hover .image {
     transform: scale(1.02);
