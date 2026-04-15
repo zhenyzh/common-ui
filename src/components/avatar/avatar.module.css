@@ -24,6 +24,9 @@
     border-radius: 0;
 }
 
+.image.whole {
+    border-radius: 0;
+}
 
 .card:hover .image {
     transform: scale(1.02);
