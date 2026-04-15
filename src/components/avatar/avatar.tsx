@@ -15,7 +15,7 @@ export type AvatarProps = {
 
 export const Avatar = ({
   image,
-  size = 50,
+  size,
   variant = "cropped",
   className,
 }: AvatarProps) => {
