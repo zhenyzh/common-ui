@@ -44,7 +44,9 @@ export const FileUploader = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const validateFile = (file: File): string | null => {
-    if (acceptedFormats.length && !acceptedFormats.includes(file.type)) {
+    const ext = "." + file.name.split(".").pop()?.toLowerCase();
+
+    if (acceptedFormats.length && !acceptedFormats.includes(ext)) {
       return `Allowed formats: ${acceptedFormats.join(", ")}`;
     }
 
