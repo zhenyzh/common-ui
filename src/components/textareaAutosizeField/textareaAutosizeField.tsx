@@ -11,6 +11,7 @@ import s from "./textareaAutosizeField.module.css";
 
 type TextareaFieldProps = {
   errorMessage?: string;
+  classNameTextarea?: string;
   label?: ReactNode;
   iconStart?: ReactNode;
   iconEnd?: ReactNode;
@@ -26,6 +27,7 @@ export const TextareaAutosizeField = forwardRef<
   (
     {
       className,
+      classNameTextarea,
       errorMessage,
       label,
       iconStart,
@@ -59,6 +61,7 @@ export const TextareaAutosizeField = forwardRef<
               iconStart && s.withIconStart,
               iconEnd && s.withIconEnd,
               !stretching && s.stretching,
+              classNameTextarea,
             )}
             id={textareaId}
             minRows={minRows}
