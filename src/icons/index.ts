@@ -57,3 +57,4 @@ export * from "./ChevronRightIcon";
 export * from "./CameraIcon";
 export * from "./EllipsisIcon";
 export * from "./UserRoundXIcon";
+export * from "./CircleStopIcon";
