@@ -59,3 +59,4 @@ export * from "./EllipsisIcon";
 export * from "./UserRoundXIcon";
 export * from "./CircleStopIcon";
 export * from "./CirclePlayIcon";
+export * from "./CirclePauseIcon";
