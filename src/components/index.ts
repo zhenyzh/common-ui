@@ -15,3 +15,5 @@ export * from "./dialog";
 export * from "./imageCropper";
 export * from "./imageUploader";
 export * from "./fileUploader";
+export * from "./audioPlayer";
+export * from "./iconButton";
