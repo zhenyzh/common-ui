@@ -19,13 +19,13 @@ import s from "./audioPlayer.module.css";
 
 export type PlayerProps = {
   src: string;
-  cover: string;
-  title: string;
-  artist: string;
-  isPlaying: boolean;
-  setIsPlaying: (isPlaying: boolean) => void;
-  onNext: () => void;
-  onPrevious: () => void;
+  cover?: string;
+  title?: string;
+  artist?: string;
+  isPlaying?: boolean;
+  setIsPlaying?: (isPlaying: boolean) => void;
+  onNext?: () => void;
+  onPrevious?: () => void;
   isShuffle?: boolean;
   isRepeat?: boolean;
   onShuffle?: () => void;
@@ -67,7 +67,7 @@ export const AudioPlayer = ({
       });
     }
 
-    setIsPlaying(!isPlaying);
+    setIsPlaying?.(!isPlaying);
   };
 
   const handleChangeTime = (e: React.ChangeEvent<HTMLInputElement>) => {
